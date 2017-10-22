@@ -1,0 +1,18 @@
+@import 'responsive-mixins';
+
+.nmg-skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nmg-skill {
+  flex-basis: 50%;
+
+  @include gt-sm {
+    flex-basis: 25%;
+  }
+
+  &__inner {
+    padding: 8px;
+  }
+}

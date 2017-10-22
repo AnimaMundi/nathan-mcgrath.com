@@ -1,0 +1,35 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+    "moduleResolution": "node",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"importHelpers": true,
+		"sourceMap": true,
+    "strict": true,
+    "noStrictGenericChecks": true,
+    "strictNullChecks": false,
+    "skipLibCheck": true,
+
+		"lib": [
+      "dom",
+      "es5",
+      "es6",
+      "es7"
+    ],
+    "types": [
+      "node",
+      "webpack",
+      "webpack-env"
+    ]
+  },
+  "include": [
+    "**/*.ts"
+  ],
+	"exclude": [
+		"coverage",
+		"node_modules",
+		"build"
+	]
+}

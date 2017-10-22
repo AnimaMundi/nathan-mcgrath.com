@@ -1,0 +1,20 @@
+<nav class="nmg-navigation">
+  <div
+    class="nmg-navigation__indicator-bar"
+    [style.height]="getIndicatorBarHeight()"
+  ></div>
+
+  <div
+    class="nmg-navigation__indicator"
+    [style.height]="getIndicatorHeight()"
+    [style.top]="getIndicatorTop()"
+  ></div>
+
+  <ul class="nmg-navigation__list">
+    <nmg-navigation-link id="about">About</nmg-navigation-link>
+    <nmg-navigation-link id="skills">Skills</nmg-navigation-link>
+    <nmg-navigation-link id="experience">Experience</nmg-navigation-link>
+    <nmg-navigation-link id="hobbies">Hobbies</nmg-navigation-link>
+    <nmg-navigation-link id="contact">Contact</nmg-navigation-link>
+  </ul>
+</nav>

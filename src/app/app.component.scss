@@ -1,0 +1,7 @@
+@import 'responsive-mixins';
+
+.nmg-main {
+  @include gt-sm {
+    margin-left: 140px;
+  }
+}

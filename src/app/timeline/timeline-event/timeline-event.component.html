@@ -1,0 +1,29 @@
+<div class="nmg-timeline-event-wrapper" [ngClass]="wrapperSideClass">
+  <div class="nmg-timeline-event-details" [ngClass]="detailsSideClass">
+    <div class="nmg-timeline-event-details__inner" [ngClass]="detailsInnerSideClass">
+      <div class="nmg-timeline-event-details__date">
+        <ng-content select="[date]"></ng-content>
+      </div>
+
+      <div class="nmg-timeline-event-details__company">
+        <ng-content select="[company]"></ng-content>
+      </div>
+    </div>
+  </div>
+
+  <div class="nmg-timeline-event" [ngClass]="sideClass">
+
+    <nmg-timeline-arrow [side]="_side"></nmg-timeline-arrow>
+    <nmg-timeline-circle [side]="_side"></nmg-timeline-circle>
+
+    <div class="nmg-timeline-event__inner" [ngClass]="innerSideClass">
+      <div class="nmg-timeline-event__header">
+        <ng-content select="[header]"></ng-content>
+      </div>
+
+      <div class="nmg-timeline-event__body">
+        <ng-content select="[body]"></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

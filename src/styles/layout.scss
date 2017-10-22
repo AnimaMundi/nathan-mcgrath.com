@@ -1,0 +1,30 @@
+@import 'sizes';
+
+$i: 25;
+
+@while $i <= 100 {
+  [padding="#{$i}"] {
+    padding: #{$i}px;
+  }
+
+  [margin="#{$i}"] {
+    margin: #{$i}px;
+  }
+
+  $i: $i + 25;
+}
+
+.container {
+  padding: map-get($sizers, 2);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.legend {
+  margin-top: map-get($sizers, 2);
+  display: block;
+  height: map-get($sizers, 1);
+  background-color: $grey-4;
+}

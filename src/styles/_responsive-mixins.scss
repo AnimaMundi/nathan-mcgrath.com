@@ -1,0 +1,38 @@
+$screen-sm-min: 600px;
+$screen-md-min: 960px;
+$screen-lg-min: 1280px;
+$screen-xl-min: 1920px;
+
+@mixin media-query($target-width) {
+	@media all and (min-width: $target-width) {
+		@content;
+	}
+}
+
+@mixin gt-xs() {
+	@include media-query($screen-sm-min) { @content; }
+}
+
+@mixin gt-sm() {
+	@include media-query($screen-md-min) { @content; }
+}
+
+@mixin gt-md() {
+	@include media-query($screen-lg-min) { @content; }
+}
+
+@mixin gt-lg() {
+	@include media-query($screen-xl-min) { @content; }
+}
+
+@mixin ie() {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		@content;
+	}
+}
+
+@mixin edge() {
+	@supports (-ms-ime-align:auto) {
+		@content;
+	}
+}

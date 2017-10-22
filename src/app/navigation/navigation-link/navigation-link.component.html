@@ -1,0 +1,9 @@
+<li class="nmg-navigation-element">
+  <a
+    [href]="href"
+    class="nmg-navigation-element__link"
+    (click)="onLinkClicked($event)"
+    [class.nmg-navigation-element__link--active]="isActive">
+    <ng-content></ng-content>
+  </a>
+</li>

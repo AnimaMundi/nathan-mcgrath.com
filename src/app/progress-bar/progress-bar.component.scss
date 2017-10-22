@@ -1,0 +1,25 @@
+@import 'colors';
+@import 'box-shadows';
+@import 'sizes';
+
+.nmg-progress-bar {
+  height: map-get($sizers, 1);
+  position: relative;
+  @extend .card-2;
+
+  &__background,
+  &__indicator {
+    position: absolute;
+    height: 100%;
+  }
+
+  &__background {
+    width: 100%;
+    background-color: $white-6;
+  }
+
+  &__indicator {
+    transition: width 0.3s linear;
+    background-color: $grey-4;
+  }
+}

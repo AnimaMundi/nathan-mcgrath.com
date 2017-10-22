@@ -1,0 +1,64 @@
+@import 'shapes';
+@import 'colors';
+@import 'sizes';
+@import 'responsive-mixins';
+
+$arrow-vertical-offset: map-get($sizers, 2);
+$arrow-horizontal-offset: map-get($sizers, 1);
+$arrow-width: map-get($sizers, 3);
+
+@mixin left-arrow {
+  right: -$arrow-width / 3;
+  left: auto;
+  transform: rotate(90deg);
+
+  &::after {
+    box-shadow:
+      0 -3px 6px rgba(0, 0, 0, 0.16),
+      0 -3px 6px rgba(0, 0, 0, 0.23);
+  }
+}
+
+@mixin right-arrow {
+  right: auto;
+  left: -$arrow-width / 3;
+  transform: rotate(-90deg);
+
+  &::after {
+    box-shadow:
+      0 3px 6px rgba(0, 0, 0, 0.16),
+      0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+}
+
+.nmg-timeline-arrow {
+  @include square($arrow-width * 2);
+
+  position: absolute;
+  top: $arrow-vertical-offset;
+  overflow: hidden;
+
+  &--left {
+    @include right-arrow();
+
+    @include gt-sm() {
+      @include left-arrow();
+    }
+  }
+
+  &--right {
+    @include right-arrow();
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: $arrow-width;
+    height: $arrow-width;
+    background-color: $grey-4;
+    transform: rotate(45deg);
+
+    top: 28px;
+    left: $arrow-width / 2;
+  }
+}

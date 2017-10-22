@@ -1,0 +1,31 @@
+@import 'shapes';
+@import 'sizes';
+@import 'colors';
+@import 'responsive-mixins';
+
+$circle-horizontal-offset: map-get($sizers, 2);
+
+.nmg-timeline-circle {
+  @include circle(map-get($sizers, 3));
+
+  content: ' ';
+  position: absolute;
+  top: map-get($sizers, 3);
+  z-index: 1;
+
+  background-color: $white-2;
+  border: $border-width solid $grey-4;
+
+  &--left,
+  &--right {
+    left: -$circle-horizontal-offset;
+    right: auto;
+  }
+
+  &--left {
+    @include gt-sm {
+      right: -$circle-horizontal-offset;
+      left: auto;
+    }
+  }
+}

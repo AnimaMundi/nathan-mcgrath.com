@@ -1,0 +1,32 @@
+@import 'sizes';
+@import 'responsive-mixins';
+@import 'colors';
+
+$timeline-width: map-get($sizers, 1);
+$timeline-padding: map-get($sizers, 4);
+
+.nmg-timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: $timeline-width / 2;
+
+  @include gt-sm {
+    padding-left: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: $grey-4;
+
+    width: $timeline-width;
+    left: $timeline-padding;
+
+    @include gt-sm {
+      left: calc(50% - #{$timeline-width / 2});
+    }
+  }
+}

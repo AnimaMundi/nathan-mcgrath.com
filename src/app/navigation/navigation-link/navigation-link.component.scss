@@ -1,0 +1,26 @@
+@import 'colors';
+@import 'sizes';
+
+.nmg-navigation-element {
+  height: $list-element-height;
+  font-size: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__link {
+    text-decoration: none;
+    transition: color 0.3s ease-out;
+    color: $white-6;
+
+    &--active,
+    &:hover {
+      color: $grey-4;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

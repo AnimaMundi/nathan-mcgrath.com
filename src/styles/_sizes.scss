@@ -1,0 +1,31 @@
+/**
+ * Global Sizes
+ */
+$atomic-sizer: 8px;
+$border-radius: $atomic-sizer / 2;
+$border-width: $atomic-sizer / 2;
+
+$sizers: (
+  1: $atomic-sizer,
+  2: $atomic-sizer * 2,
+  3: $atomic-sizer * 3,
+  4: $atomic-sizer * 4,
+  5: $atomic-sizer * 5,
+  6: $atomic-sizer * 6,
+  7: $atomic-sizer * 7,
+  8: $atomic-sizer * 8
+);
+
+/**
+ * Header Sizes
+ */
+$header-size: 60px;
+$header-elem-height: $header-size - $header-size / 4;
+$header-elem-width: $header-size * 3;
+
+$hero-size: $header-size * 8;
+
+/**
+ * Navigation Sizes
+ */
+$list-element-height: 100px;

@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="text-center">Skills</h1>
+  <h2 class="text-center">
+    What I'm good at
+  </h2>
+
+  <div class="nmg-skills">
+    <div *ngFor="let skill of skills" class="nmg-skill">
+      <div class="nmg-skill__inner">
+        <h3 class="nmg-skill__title">{{skill.title}}</h3>
+        <h4 class="nmg-skill__time">{{skill.time}}</h4>
+        <nmg-progress-bar [value]="skill.value"></nmg-progress-bar>
+      </div>
+    </div>
+  </div>
+</div>

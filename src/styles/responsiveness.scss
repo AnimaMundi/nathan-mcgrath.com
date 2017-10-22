@@ -1,0 +1,57 @@
+@import 'responsive-mixins';
+
+[hide] {
+  display: none;
+}
+
+[hide-gt-xs] {
+  @include gt-xs {
+    display: none;
+  }
+}
+
+[hide-gt-sm] {
+  @include gt-sm {
+    display: none;
+  }
+}
+
+[hide-gt-md] {
+  @include gt-md {
+    display: none;
+  }
+}
+
+[hide-gt-lg] {
+  @include gt-lg {
+    display: none;
+  }
+}
+
+[show] {
+  display: block;
+}
+
+[show-gt-xs] {
+  @include gt-xs {
+    display: block;
+  }
+}
+
+[show-gt-sm] {
+  @include gt-sm {
+    display: block;
+  }
+}
+
+[show-gt-md] {
+  @include gt-md {
+    display: block;
+  }
+}
+
+[show-gt-lg] {
+  @include gt-lg {
+    display: block;
+  }
+}
