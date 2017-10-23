@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/var/nathan-mcgrath
+hooks:
+  BeforeInstall:
+    - location: deploy/stop.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: deploy/build.sh
+      timeout: 1000
+      runas: root
+  ApplicationStart:
+    - location: deploy/start.sh
+      timeout: 300
+      runas: root
+  ValidateService:
+    - location: deploy/validate.sh
+      timeout: 15
+      runas: root
