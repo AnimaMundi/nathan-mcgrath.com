@@ -1,5 +1,3 @@
-import { polyfill as smoothscroll } from 'smoothscroll-polyfill';
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -16,7 +14,9 @@ import { NavigationModule } from './navigation/navigation.module';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({
+      appId: 'nathan-mcgrath'
+    }),
     TimelineModule,
     DomServicesModule,
     NavigationModule
@@ -27,10 +27,5 @@ import { NavigationModule } from './navigation/navigation.module';
     SkillsComponent,
     ProgressBarComponent
   ],
-  bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor() {
-    smoothscroll();
-  }
-}
+export class AppModule { }
