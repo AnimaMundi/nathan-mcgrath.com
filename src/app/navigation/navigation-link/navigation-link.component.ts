@@ -19,19 +19,19 @@ import { NavigationService } from '../navigation.service';
 })
 export class NavigationLinkComponent {
   @Input()
-  public set id(id: string) {
-    this._id = id;
-    this.href = `#${id}`;
+  public set target(target: string) {
+    this._target = target;
+    this.href = `#${target}`;
   }
 
-  public get id(): string {
-    return this._id;
+  public get target(): string {
+    return this._target;
   }
 
   public href: string = '#';
   public isActive: boolean = false;
 
-  private _id: string = '';
+  private _target: string = '';
 
   constructor(
     private _scrollService: ScrollService,
@@ -63,6 +63,6 @@ export class NavigationLinkComponent {
   }
 
   private getTarget(): ElementRef {
-    return this._navigationService.getTarget(this.id);
+    return this._navigationService.getTarget(this.target);
   }
 }
