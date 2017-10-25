@@ -19,7 +19,7 @@ export const environmentDirectory: string = resolve(sourceDirectory, 'environmen
 
 // Source files
 export const main: string = resolve(sourceDirectory, 'main.ts');
-export const indexHtmlPath: string = resolve(sourceDirectory, 'index.html');
+export const indexHtmlPath: string = resolve(sourceDirectory, 'index.ejs');
 
 // Dynamic files
 export const config: string = resolve(environmentDirectory, `config.${env}.ts`);
