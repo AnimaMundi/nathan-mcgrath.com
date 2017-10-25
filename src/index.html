@@ -114,14 +114,6 @@
       <div id="loader"></div>
     </div>
   </nmg-app>
-
-  <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-    <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
-  <% } %>
-
-  <% for (var css in htmlWebpackPlugin.files.css) { %>
-    <link rel="stylesheet" property="stylesheet" href="<%= htmlWebpackPlugin.files.css[css] %>">
-  <% } %>
 </body>
 
 </html>
