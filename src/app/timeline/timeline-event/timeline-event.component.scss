@@ -2,6 +2,7 @@
 @import 'box-shadows';
 @import 'responsive-mixins';
 @import 'colors';
+@import 'shapes';
 
 $event-horizontal-offset: map-get($sizers, 4);
 $event-padding: map-get($sizers, 4);
@@ -63,8 +64,7 @@ $event-padding: map-get($sizers, 4);
   position: relative;
 
   &__inner {
-    border-radius: $border-radius;
-    @extend .card-2;
+    @include floating-card;
 
     margin-left: $event-padding;
 
@@ -85,10 +85,7 @@ $event-padding: map-get($sizers, 4);
   }
 
   &__body {
-    font-size: 16px;
     padding: map-get($sizers, 2);
-    background-color: $white-2;
-    color: $grey-4;
     min-height: 200px;
   }
 }

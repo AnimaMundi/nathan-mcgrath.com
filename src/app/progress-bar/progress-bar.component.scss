@@ -3,7 +3,7 @@
 @import 'sizes';
 
 .nmg-progress-bar {
-  height: map-get($sizers, 1);
+  height: 12px;
   position: relative;
   @extend .card-2;
 

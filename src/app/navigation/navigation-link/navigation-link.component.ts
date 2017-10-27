@@ -59,7 +59,7 @@ export class NavigationLinkComponent {
 
   public setIsActive(isActive: boolean): void {
     this.isActive = isActive;
-    this._changeDetectorRef.markForCheck();
+    this._changeDetectorRef.detectChanges();
   }
 
   private getTarget(): ElementRef {

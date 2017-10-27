@@ -1,0 +1,23 @@
+@import 'sizes';
+@import 'box-shadows';
+@import 'colors';
+@import 'shapes';
+
+.about-me {
+  &__main {
+    @include floating-card;
+
+    padding: map-get($sizers, 2);
+    margin: map-get($sizers, 1);
+    text-align: center;
+  }
+
+  &__body {
+    margin: auto;
+    max-width: 800px;
+  }
+
+  &__body:not(:last-child) {
+    margin-bottom: map-get($sizers, 2);
+  }
+}

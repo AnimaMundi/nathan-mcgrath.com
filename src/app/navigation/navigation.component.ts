@@ -26,7 +26,7 @@ export class NavigationComponent {
       this.init();
     }
 
-    this._changeDetectorRef.markForCheck();
+    this._changeDetectorRef.detectChanges();
   }
 
   private _linkElements: QueryList<NavigationLinkComponent>;
@@ -89,6 +89,6 @@ export class NavigationComponent {
       }
     }
 
-    this._changeDetectorRef.markForCheck();
+    this._changeDetectorRef.detectChanges();
   }
 }

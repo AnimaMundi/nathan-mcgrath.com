@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
+import { AboutMeComponent } from './about-me/about-me.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { SkillsComponent } from './skills/skills.component';
 
@@ -23,6 +24,7 @@ import { NavigationModule } from './navigation/navigation.module';
   ],
   declarations: [
     AppComponent,
+    AboutMeComponent,
     ExperienceComponent,
     SkillsComponent,
     ProgressBarComponent
