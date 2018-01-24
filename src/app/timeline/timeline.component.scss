@@ -6,17 +6,13 @@ $timeline-width: map-get($sizers, 1);
 $timeline-padding: map-get($sizers, 4);
 
 .nmg-timeline {
-  @include gt-sm {
-    margin-left: 140px;
-  }
-
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
   padding-left: $timeline-width / 2;
 
   @include gt-sm {
-    padding-left: 0;
+    padding-left: 140px;
   }
 
   &::after {
@@ -30,7 +26,7 @@ $timeline-padding: map-get($sizers, 4);
     left: $timeline-padding;
 
     @include gt-sm {
-      left: calc(50% - #{$timeline-width / 2});
+      left: calc(50% - #{$timeline-width / 2 - 70px});
     }
   }
 }

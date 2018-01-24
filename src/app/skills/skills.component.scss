@@ -1,12 +1,14 @@
 @import 'responsive-mixins';
 
 .nmg-skills {
-  display: flex;
-  flex-wrap: wrap;
-
   @include gt-sm {
     margin-left: 140px;
   }
+}
+
+.nmg-skills__content {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .nmg-skill {

@@ -12,6 +12,10 @@ $y-displacement: map-get($sizers, 20);
     background: #FFF;
     overflow: hidden;
 
+    @include gt-sm {
+      padding-left: 140px;
+    }
+
     &:after {
       content: ' ';
       display: block;
@@ -37,25 +41,40 @@ $y-displacement: map-get($sizers, 20);
     z-index: 2;
   }
 
+  &__intro-caption {
+    font-style: italic;
+  }
+
   &__main {
     @include floating-card();
 
     position: relative;
     z-index: 1;
 
-    padding: $y-displacement map-get($sizers, 1) map-get($sizers, 2) map-get($sizers, 1);
+    padding: $y-displacement 0 map-get($sizers, 2) 0;
     margin-bottom: -$y-displacement;
     transform: translateY(-$y-displacement);
     text-align: center;
 
     @include gt-sm {
       padding-bottom: $y-displacement;
+      padding: $y-displacement 140px;
+    }
+  }
+
+  &__main-inner {
+    @include gt-sm {
+      padding-left: 140px;
     }
   }
 
   &__title {
     position: relative;
     z-index: 2;
+
+    @include gt-sm {
+      margin-left: 140px;
+    }
   }
 
   &__subtitle {
@@ -65,7 +84,6 @@ $y-displacement: map-get($sizers, 20);
   &__body {
     margin: auto;
     padding: map-get($sizers, 1);
-    max-width: 800px;
 
     &:not(:last-child) {
       margin-bottom: map-get($sizers, 2);

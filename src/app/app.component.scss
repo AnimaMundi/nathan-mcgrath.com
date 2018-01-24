@@ -1,1 +1,13 @@
 @import 'responsive-mixins';
+
+#hobbies {
+  @include gt-sm {
+    padding-left: 140px;
+  }
+}
+
+#contact {
+  @include gt-sm {
+    padding-left: 140px;
+  }
+}
