@@ -6,6 +6,10 @@ $timeline-width: map-get($sizers, 1);
 $timeline-padding: map-get($sizers, 4);
 
 .nmg-timeline {
+  @include gt-sm {
+    margin-left: 140px;
+  }
+
   position: relative;
   max-width: 1200px;
   margin: 0 auto;

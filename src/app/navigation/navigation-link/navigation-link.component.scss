@@ -1,5 +1,7 @@
 @import 'colors';
 @import 'sizes';
+@import 'animations';
+@import 'elevation';
 
 .nmg-navigation-element {
   height: $list-element-height;
@@ -11,8 +13,10 @@
 
   &__link {
     text-decoration: none;
-    transition: color 0.3s ease-out;
     color: $white-6;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
+
+    @include transition(color);
 
     &--active,
     &:hover {

@@ -3,6 +3,10 @@
 .nmg-skills {
   display: flex;
   flex-wrap: wrap;
+
+  @include gt-sm {
+    margin-left: 140px;
+  }
 }
 
 .nmg-skill {

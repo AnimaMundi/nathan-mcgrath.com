@@ -7,6 +7,9 @@ import {
 import { NavigationLinkComponent } from './navigation-link/navigation-link.component';
 import { DocumentService } from '../dom-services/document.service';
 
+const SCROLL_Y_DISPLACEMENT: number = 250;
+const LINK_HEIGHT: number = 100;
+
 @Component({
   selector: 'nmg-navigation',
   templateUrl: './navigation.component.html',
@@ -14,9 +17,6 @@ import { DocumentService } from '../dom-services/document.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavigationComponent {
-  public activeIndex: number = 0;
-  public numLinks: number = 0;
-  public linkHeight: number = 100;
 
   @ViewChildren(NavigationLinkComponent)
   private set linkElements(linkElements: QueryList<NavigationLinkComponent>) {
@@ -29,8 +29,9 @@ export class NavigationComponent {
     this._changeDetectorRef.detectChanges();
   }
 
+  private activeIndex: number = 0;
+  private numLinks: number = 0;
   private _linkElements: QueryList<NavigationLinkComponent>;
-
   private sortedLinkElements: Array<NavigationLinkComponent>;
 
   constructor(
@@ -44,15 +45,15 @@ export class NavigationComponent {
   }
 
   public getIndicatorBarHeight(): string {
-    return `${this.linkHeight * this.numLinks}px`;
+    return `${LINK_HEIGHT * this.numLinks}px`;
   }
 
   public getIndicatorHeight(): string {
-    return `${this.linkHeight}px`;
+    return `${LINK_HEIGHT}px`;
   }
 
   public getIndicatorTop(): string {
-    return `${this.linkHeight * this.activeIndex}px`;
+    return `${LINK_HEIGHT * this.activeIndex}px`;
   }
 
   private init(): void {
@@ -72,6 +73,8 @@ export class NavigationComponent {
   }
 
   private setActiveLink(): void {
+    this.activeIndex = 0;
+
     for (let i: number = 0, len: number = this.sortedLinkElements.length; i < len; i++) {
       if (i === len - 1) { continue; }
 
@@ -80,7 +83,7 @@ export class NavigationComponent {
       const nextPos: number = this.sortedLinkElements[i + 1].getTargetPosition().top;
 
       if (
-        scrollPos >= curPos &&
+        scrollPos >= (curPos - SCROLL_Y_DISPLACEMENT) &&
         scrollPos < nextPos
       ) {
         this.setLinkElementsInactive();

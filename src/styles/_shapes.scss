@@ -1,6 +1,6 @@
 @import 'sizes';
-@import 'box-shadows';
 @import 'colors';
+@import 'elevation';
 
 @mixin square($size) {
   width: $size;
@@ -13,7 +13,7 @@
 }
 
 @mixin floating-card() {
-  @extend .card-2;
+  @include elevation(2);
 
   border-radius: $border-radius;
   background-color: $white-2;
@@ -26,6 +26,11 @@
   font-weight: bold;
   font-size: 20px;
   padding: map-get($sizers, 2);
+}
+
+@mixin inverse-floating-card-header() {
+  @include floating-card-header();
+
   color: $white-2;
   background-color: $grey-4;
 }

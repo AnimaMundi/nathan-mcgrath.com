@@ -1,5 +1,4 @@
 @import 'sizes';
-@import 'box-shadows';
 @import 'responsive-mixins';
 @import 'colors';
 @import 'shapes';
@@ -64,7 +63,7 @@ $event-padding: map-get($sizers, 4);
   position: relative;
 
   &__inner {
-    @include floating-card;
+    @include floating-card();
 
     margin-left: $event-padding;
 
@@ -77,7 +76,7 @@ $event-padding: map-get($sizers, 4);
   }
 
   &__header {
-    @include floating-card-header;
+    @include inverse-floating-card-header();
   }
 
   &__body {

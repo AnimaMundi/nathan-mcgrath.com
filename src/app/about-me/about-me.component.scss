@@ -1,18 +1,65 @@
 @import 'sizes';
-@import 'box-shadows';
 @import 'colors';
 @import 'shapes';
+@import 'elevation';
+@import 'responsive-mixins';
+
+$y-displacement: map-get($sizers, 20);
 
 .about-me {
-  &__main {
-    @include floating-card;
+  &__header {
+    position: relative;
+    background: #FFF;
+    overflow: hidden;
 
-    margin: map-get($sizers, 1);
+    &:after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.15;
+      background-repeat: no-repeat;
+      background-position: 50% 0;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-image: url('../../assets/images/hero.jpeg');
+    }
+  }
+
+  &__intro {
+    padding: map-get($sizers, 8) 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__main {
+    @include floating-card();
+
+    position: relative;
+    z-index: 1;
+
+    padding: $y-displacement map-get($sizers, 1) map-get($sizers, 2) map-get($sizers, 1);
+    margin-bottom: -$y-displacement;
+    transform: translateY(-$y-displacement);
     text-align: center;
+
+    @include gt-sm {
+      padding-bottom: $y-displacement;
+    }
   }
 
   &__title {
-    @include floating-card-header;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__subtitle {
+    @include floating-card-header();
   }
 
   &__body {
@@ -28,9 +75,11 @@
 
 .thumbnail {
   @include circle(300px);
-  @extend .card-2;
+  @include elevation(3);
 
   position: relative;
+  z-index: 2;
+
   overflow: hidden;
   margin: 50px auto;
 

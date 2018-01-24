@@ -1,11 +1,11 @@
 @import 'colors';
-@import 'box-shadows';
 @import 'sizes';
+@import 'elevation';
 
 .nmg-progress-bar {
   height: 12px;
   position: relative;
-  @extend .card-2;
+  @include elevation(2);
 
   &__background,
   &__indicator {
