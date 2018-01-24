@@ -77,11 +77,7 @@ $event-padding: map-get($sizers, 4);
   }
 
   &__header {
-    font-weight: bold;
-    font-size: 20px;
-    padding: map-get($sizers, 2);
-    color: $white-2;
-    background-color: $grey-4;
+    @include floating-card-header;
   }
 
   &__body {

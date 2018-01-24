@@ -21,3 +21,11 @@
   font-size: 18px;
   line-height: 1.5;
 }
+
+@mixin floating-card-header() {
+  font-weight: bold;
+  font-size: 20px;
+  padding: map-get($sizers, 2);
+  color: $white-2;
+  background-color: $grey-4;
+}

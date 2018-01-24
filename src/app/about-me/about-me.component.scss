@@ -7,17 +7,39 @@
   &__main {
     @include floating-card;
 
-    padding: map-get($sizers, 2);
     margin: map-get($sizers, 1);
     text-align: center;
   }
 
-  &__body {
-    margin: auto;
-    max-width: 800px;
+  &__title {
+    @include floating-card-header;
   }
 
-  &__body:not(:last-child) {
-    margin-bottom: map-get($sizers, 2);
+  &__body {
+    margin: auto;
+    padding: map-get($sizers, 1);
+    max-width: 800px;
+
+    &:not(:last-child) {
+      margin-bottom: map-get($sizers, 2);
+    }
+  }
+}
+
+.thumbnail {
+  @include circle(300px);
+  @extend .card-2;
+
+  position: relative;
+  overflow: hidden;
+  margin: 50px auto;
+
+  &__image {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    height: 150%;
+    width: auto;
+    transform: translate(-50%,-50%);
   }
 }
