@@ -3,6 +3,9 @@
     [href]="href"
     class="nmg-navigation-element__link"
     (click)="onLinkClicked($event)"
+    angulartics2On="click"
+    angularticsAction="Navigate"
+    [angularticsCategory]="target"
     [class.nmg-navigation-element__link--active]="isActive">
     <ng-content></ng-content>
   </a>

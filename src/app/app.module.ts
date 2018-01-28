@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 import { AppComponent } from './app.component';
 
@@ -18,6 +22,8 @@ import { NavigationModule } from './navigation/navigation.module';
     BrowserModule.withServerTransition({
       appId: 'nathan-mcgrath'
     }),
+    RouterModule.forRoot([]),
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
     TimelineModule,
     DomServicesModule,
     NavigationModule

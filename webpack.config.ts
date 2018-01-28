@@ -5,12 +5,13 @@ import {
   indexHtmlPath, rootDirectory,
   buildDirectory, sourceDirectory,
   appDirectory, tsConfigPath,
-  config
+  config, faviconPath
 } from './config/paths';
 
 module.exports = webpackConfig({
   indexHtmlPath, rootDirectory, buildDirectory,
   sourceDirectory, appDirectory, tsConfigPath,
   entry: { main }, alias: { config },
-  sassIncludePaths: [stylesDirectory, nodeModules]
+  sassIncludePaths: [stylesDirectory, nodeModules],
+  faviconPath
 });

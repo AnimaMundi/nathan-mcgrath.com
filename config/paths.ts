@@ -23,3 +23,5 @@ export const indexHtmlPath: string = resolve(sourceDirectory, 'index.html');
 
 // Dynamic files
 export const config: string = resolve(environmentDirectory, `config.${env}.ts`);
+
+export const faviconPath: string = resolve(sourceDirectory, 'assets', 'images', 'favicon.ico');

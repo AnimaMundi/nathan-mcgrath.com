@@ -86,11 +86,12 @@ export class NavigationComponent {
         scrollPos >= (curPos - SCROLL_Y_DISPLACEMENT) &&
         scrollPos < nextPos
       ) {
-        this.setLinkElementsInactive();
-        this.sortedLinkElements[i].setIsActive(true);
         this.activeIndex = i;
       }
     }
+
+    this.setLinkElementsInactive();
+    this.sortedLinkElements[this.activeIndex].setIsActive(true);
 
     this._changeDetectorRef.detectChanges();
   }
