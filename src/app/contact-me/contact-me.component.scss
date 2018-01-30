@@ -1,0 +1,28 @@
+@import 'sizes';
+@import 'shapes';
+@import 'colors';
+@import 'responsive-mixins';
+@import 'animations';
+
+.contact-me__content {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-me__form {
+  padding: map-get($sizers, 4);
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include gt-sm {
+    flex-basis: 50%;
+  }
+
+  @include floating-card();
+}
+
+.contact-me__form-recaptcha {
+  margin: auto;
+  margin-bottom: map-get($sizers, 4);
+}

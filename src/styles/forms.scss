@@ -1,0 +1,65 @@
+@import 'sizes';
+@import 'colors';
+@import 'animations';
+
+input,
+textarea {
+  width: 100%;
+  appearance: none;
+  background-color: $white-2;
+  border: 1px solid $grey-4;
+  border-radius: $border-radius;
+  padding: map-get($sizers, 1);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  appearance: none;
+  background-color: $white-2;
+  border: 1px solid $grey-4;
+  border-radius: $border-radius;
+  padding: map-get($sizers, 1);
+  margin: map-get($sizers, 1);
+  cursor: pointer;
+
+  @include transition(background-color);
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: $white-3;
+  }
+
+  &:active {
+    background-color: $white-6;
+  }
+}
+
+.form-group {
+  display: flex;
+  position: relative;
+
+  &__label {
+    flex-basis: 20%;
+  }
+
+  &__input {
+    flex-basis: 80%;
+    padding-bottom: map-get($sizers, 4);
+  }
+
+  &__input-message {
+    position: absolute;
+
+    bottom: map-get($sizers, 1) / 2;
+  }
+}

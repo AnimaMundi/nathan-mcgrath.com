@@ -4,8 +4,26 @@
     What I'm good at
   </h2>
 
+  <h3 class="text-center nmg-skills__header">
+    My Favourites
+  </h3>
+
   <div class="nmg-skills__content">
     <div *ngFor="let skill of skills" class="nmg-skill">
+      <div class="nmg-skill__inner">
+        <h3 class="nmg-skill__title">{{skill.title}}</h3>
+        <h4 class="nmg-skill__time">{{skill.time}}</h4>
+        <nmg-progress-bar [value]="skill.value"></nmg-progress-bar>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="text-center nmg-skills__header">
+    Some Other Skills
+  </h3>
+
+  <div class="nmg-skills__content">
+    <div *ngFor="let skill of otherSkills" class="nmg-skill">
       <div class="nmg-skill__inner">
         <h3 class="nmg-skill__title">{{skill.title}}</h3>
         <h4 class="nmg-skill__time">{{skill.time}}</h4>

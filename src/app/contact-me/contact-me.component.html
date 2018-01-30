@@ -1,0 +1,89 @@
+<div class="contact-me">
+  <h1 class="text-center">Contact Me</h1>
+
+  <div class="contact-me__content">
+    <form
+      class="contact-me__form"
+      #contactForm="ngForm"
+      (ngSubmit)="postContactForm(contactForm)">
+
+      <div class="form-group">
+        <label for="name" class="form-group__label">Name</label>
+
+        <div class="form-group__input">
+          <input
+            type="text"
+            name="name"
+            required
+            minlength="3"
+            maxlength="20"
+            [(ngModel)]="contactFormResponse.name"
+            #name="ngModel">
+
+          <div *ngIf="name.invalid && (name.dirty || name.touched || contactForm.submitted)">
+            <div *ngIf="name.errors.required" class="form-group__input-message">
+              Your name is required.
+            </div>
+
+            <div *ngIf="name.errors.minlength" class="form-group__input-message">
+              Your name must be at least 3 characters long.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="form-group__label">Email</label>
+
+        <div class="form-group__input">
+          <input
+            type="text"
+            name="email"
+            required
+            email
+            [(ngModel)]="contactFormResponse.email"
+            #email="ngModel">
+
+          <div *ngIf="email.invalid && (email.dirty || email.touched || contactForm.submitted)">
+            <div *ngIf="email.errors.email" class="form-group__input-message">
+              Your email must be a valid email.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name" class="form-group__label">Message</label>
+
+        <div class="form-group__input">
+          <textarea
+            name="message"
+            rows="10"
+            required
+            minlength="30"
+            maxlength="300"
+            [(ngModel)]="contactFormResponse.message"
+            #message="ngModel"
+          ></textarea>
+
+          <div *ngIf="message.invalid && (message.dirty || message.touched || contactForm.submitted)">
+            <div *ngIf="message.errors.required" class="form-group__input-message">
+              A message is required.
+            </div>
+
+            <div *ngIf="message.errors.minlength" class="form-group__input-message">
+              Your message must be at least 30 characters long.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="contact-me__form-recaptcha g-recaptcha"
+        data-sitekey="6LdeOEMUAAAAAGCMKVrhgjeJSWhfM3shp6XVTC4r"
+      ></div>
+
+      <button class="contact-me__form-submit" type="submit">Submit</button>
+    </form>
+  </div>
+</div>

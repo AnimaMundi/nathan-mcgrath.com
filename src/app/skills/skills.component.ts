@@ -15,23 +15,81 @@ interface ISkill {
 export class SkillsComponent {
   public skills: Array<ISkill> = [
     {
-      title: 'Java',
-      time: '6 Years',
-      value: 60
-    },
-    {
-      title: 'C/C++',
-      time: '7 Years',
+      title: 'Angular',
+      time: '2 Years',
       value: 50
     },
     {
       title: 'TypeScript',
-      time: '18 Months',
+      time: '2 Years',
       value: 90
     },
     {
-      title: 'JavaScript',
+      title: 'Flux/Ngrx',
+      time: '18 Months',
+      value: 50
+    },
+    {
+      title: 'RxJS',
+      time: '18 Months',
+      value: 50
+    },
+    {
+      title: 'SASS/LESS',
       time: '2.5 Years',
+      value: 90
+    },
+    {
+      title: 'GIT',
+      time: '3 Years',
+      value: 65
+    },
+    {
+      title: 'JavaScript',
+      time: '3 Years',
+      value: 80
+    },
+    {
+      title: 'AngularJS',
+      time: '3 Years',
+      value: 50
+    },
+    {
+      title: 'NodeJS',
+      time: '3 Years',
+      value: 50
+    },
+    {
+      title: 'MongoDB',
+      time: '3 Years',
+      value: 50
+    },
+    {
+      title: 'CSS',
+      time: '4 Years',
+      value: 70
+    },
+    {
+      title: 'HTML',
+      time: '4 Years',
+      value: 90
+    },
+  ];
+
+  public otherSkills: Array<ISkill> = [
+    {
+      title: 'C/C++',
+      time: '7 Years',
+      value: 60
+    },
+    {
+      title: 'Java',
+      time: '6 Years',
+      value: 75
+    },
+    {
+      title: 'JavaFX',
+      time: '2 Years',
       value: 80
     },
     {
@@ -40,79 +98,19 @@ export class SkillsComponent {
       value: 40
     },
     {
-      title: 'SASS/LESS',
-      time: '2.5 Years',
-      value: 90
-    },
-    {
-      title: 'CSS',
-      time: '3.5 Years',
-      value: 70
-    },
-    {
-      title: 'HTML',
-      time: '3 Years',
-      value: 90
-    },
-    {
-      title: 'NodeJS',
-      time: '2.5 Years',
-      value: 50
-    },
-    {
-      title: 'GIT',
-      time: '3 Years',
-      value: 65
-    },
-    {
-      title: 'AngularJS',
-      time: '2 Years',
-      value: 50
-    },
-    {
-      title: 'Angular',
-      time: '18 Months',
-      value: 50
-    },
-    {
       title: 'CakePHP',
-      time: '7 Years',
+      time: '1 Year',
       value: 50
     },
     {
-      title: 'ExpressJS',
-      time: '7 Years',
-      value: 50
-    },
-    {
-      title: 'JavaFX',
-      time: '7 Years',
-      value: 50
-    },
-    {
-      title: 'MongoDB',
-      time: '7 Years',
-      value: 50
+      title: '.NET',
+      time: '1 Year',
+      value: 25
     },
     {
       title: 'MySQL',
-      time: '7 Years',
-      value: 50
+      time: '2 Years',
+      value: 35
     },
-    {
-      title: 'MVC',
-      time: '7 Years',
-      value: 50
-    },
-    {
-      title: 'Flux',
-      time: '7 Years',
-      value: 50
-    },
-    {
-      title: 'RxJS',
-      time: '7 Years',
-      value: 50
-    }
   ];
 }

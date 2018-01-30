@@ -1,9 +1,15 @@
+@import 'sizes';
 @import 'responsive-mixins';
 
 .nmg-skills {
   @include gt-sm {
     margin-left: 140px;
   }
+}
+
+.nmg-skills__header {
+  margin-top: map-get($sizers, 4);
+  text-decoration: underline;
 }
 
 .nmg-skills__content {
