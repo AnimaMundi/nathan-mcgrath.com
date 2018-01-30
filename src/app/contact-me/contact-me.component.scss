@@ -16,7 +16,7 @@
 }
 
 .contact-me__form {
-  padding: map-get($sizers, 4);
+  padding: 0 map-get($sizers, 4) map-get($sizers, 4);
   flex-basis: 100%;
   display: flex;
   flex-direction: column;
@@ -30,6 +30,10 @@
   }
 
   @include floating-card();
+}
+
+.contact-me__form-title {
+  margin: map-get($sizers, 3);
 }
 
 .contact-me__form-recaptcha {

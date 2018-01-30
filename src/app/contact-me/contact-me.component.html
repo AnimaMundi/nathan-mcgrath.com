@@ -2,10 +2,15 @@
   <h1 class="text-center">Contact Me</h1>
 
   <div class="contact-me__content">
+
     <form
-      class="contact-me__form"
-      #contactForm="ngForm"
-      (ngSubmit)="postContactForm(contactForm)">
+    class="contact-me__form"
+    #contactForm="ngForm"
+    (ngSubmit)="postContactForm(contactForm)">
+
+      <h2 class="text-center contact-me__form-title">
+        Leave me a message
+      </h2>
 
       <div class="form-group">
         <label for="name" class="form-group__label">Name</label>
