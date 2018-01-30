@@ -4,6 +4,8 @@
 
 input,
 textarea {
+  position: relative;
+  z-index: 1;
   width: 100%;
   box-sizing: border-box;
   appearance: none;
@@ -36,6 +38,7 @@ button {
     outline: none;
   }
 
+  &:focus,
   &:hover {
     background-color: $white-3;
   }

@@ -20,14 +20,24 @@
             [(ngModel)]="contactFormResponse.name"
             #name="ngModel">
 
-          <div *ngIf="name.invalid && (name.dirty || name.touched || contactForm.submitted)">
-            <div *ngIf="name.errors.required" class="form-group__input-message">
-              Your name is required.
-            </div>
+          <div
+            *ngIf="
+                name.invalid &&
+                (name.dirty || name.touched || contactForm.submitted) &&
+                name.errors.required"
+            class="form-group__input-message"
+            @inputMessageState>
+            Your name is required.
+          </div>
 
-            <div *ngIf="name.errors.minlength" class="form-group__input-message">
-              Your name must be at least 3 characters long.
-            </div>
+          <div
+            *ngIf="
+              name.invalid &&
+              (name.dirty || name.touched || contactForm.submitted) &&
+              name.errors.minlength"
+            class="form-group__input-message"
+            @inputMessageState>
+            Your name must be at least 3 characters long.
           </div>
         </div>
       </div>
@@ -44,10 +54,14 @@
             [(ngModel)]="contactFormResponse.email"
             #email="ngModel">
 
-          <div *ngIf="email.invalid && (email.dirty || email.touched || contactForm.submitted)">
-            <div *ngIf="email.errors.email" class="form-group__input-message">
-              Your email must be a valid email.
-            </div>
+          <div
+            *ngIf="
+              email.invalid &&
+              (email.dirty || email.touched || contactForm.submitted) &&
+              email.errors.email"
+            class="form-group__input-message"
+            @inputMessageState>
+            Your email must be a valid email.
           </div>
         </div>
       </div>
@@ -66,22 +80,38 @@
             #message="ngModel"
           ></textarea>
 
-          <div *ngIf="message.invalid && (message.dirty || message.touched || contactForm.submitted)">
-            <div *ngIf="message.errors.required" class="form-group__input-message">
-              A message is required.
-            </div>
+          <div
+            *ngIf="
+              message.invalid &&
+              (message.dirty || message.touched || contactForm.submitted) &&
+              message.errors.required"
+            class="form-group__input-message"
+            @inputMessageState>
+            A message is required.
+          </div>
 
-            <div *ngIf="message.errors.minlength" class="form-group__input-message">
-              Your message must be at least 30 characters long.
-            </div>
+          <div
+            *ngIf="
+              message.invalid &&
+              (message.dirty || message.touched || contactForm.submitted) &&
+              message.errors.minlength"
+            class="form-group__input-message"
+            @inputMessageState>
+            Your message must be at least 30 characters long.
           </div>
         </div>
       </div>
 
-      <div
-        class="contact-me__form-recaptcha g-recaptcha"
-        data-sitekey="6LdeOEMUAAAAAGCMKVrhgjeJSWhfM3shp6XVTC4r"
-      ></div>
+      <div class="form-group">
+        <label class="form-group__label">Humanity</label>
+
+        <div class="form-group__input">
+          <div
+            class="contact-me__form-recaptcha g-recaptcha"
+            data-sitekey="6LdeOEMUAAAAAGCMKVrhgjeJSWhfM3shp6XVTC4r"
+          ></div>
+        </div>
+      </div>
 
       <button class="contact-me__form-submit" type="submit">Submit</button>
     </form>
