@@ -5,7 +5,7 @@
   "main": "build/index.html",
   "scripts": {
     "build": "webpack --progress",
-    "start": "webpack-dev-server --progress --watch-poll",
+    "start": "webpack-dev-server --progress",
     "build:aot": "npm run build -- --config=config/webpack.aot.ts",
     "start:aot": "npm run start -- --config=config/webpack.aot.ts",
     "build:ssr:client": "npm run build -- --config=config/webpack.aot.ts --output-public-path=public/",
