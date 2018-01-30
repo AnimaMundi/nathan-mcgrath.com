@@ -1,0 +1,41 @@
+@import 'responsive-mixins';
+@import 'shapes';
+@import 'sizes';
+
+.about-site {
+  @include gt-sm {
+    margin-left: 200px;
+  }
+}
+
+.about-site__content {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 map-get($sizers, 4) map-get($sizers, 4);
+
+  @include floating-card();
+}
+
+.about-site__title {
+  margin: map-get($sizers, 3);
+}
+
+.about-site__entry {
+  display: flex;
+  align-items: center;
+  margin: map-get($sizers, 1) 0;
+}
+
+.about-site__entry-bullet {
+  @include circle(map-get($sizers, 2));
+  background-color: $grey-4;
+  margin-left: map-get($sizers, 4);
+  margin-right: map-get($sizers, 2);
+}
+
+.about-site__entry-text {
+  font-size: 18px;
+}

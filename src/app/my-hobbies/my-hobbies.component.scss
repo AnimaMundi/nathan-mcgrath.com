@@ -1,7 +1,0 @@
-@import 'responsive-mixins';
-
-.my-hobbies {
-  @include gt-sm {
-    margin-left: 140px;
-  }
-}

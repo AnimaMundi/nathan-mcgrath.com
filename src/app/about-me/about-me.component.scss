@@ -13,7 +13,7 @@ $y-displacement: map-get($sizers, 15);
     overflow: hidden;
 
     @include gt-sm {
-      padding-left: 140px;
+      padding-left: 200px;
     }
 
     &:after {
@@ -58,13 +58,13 @@ $y-displacement: map-get($sizers, 15);
 
     @include gt-sm {
       padding-bottom: $y-displacement;
-      padding: $y-displacement 140px;
+      padding: $y-displacement 200px;
     }
   }
 
   &__main-inner {
     @include gt-sm {
-      padding-left: 140px;
+      padding-left: 200px;
     }
   }
 
@@ -73,7 +73,7 @@ $y-displacement: map-get($sizers, 15);
     z-index: 2;
 
     @include gt-sm {
-      margin-left: 140px;
+      margin-left: 200px;
     }
   }
 

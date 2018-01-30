@@ -12,7 +12,7 @@ $timeline-padding: map-get($sizers, 4);
   padding-left: $timeline-width / 2;
 
   @include gt-sm {
-    padding-left: 140px;
+    padding-left: 200px;
   }
 
   &::after {
@@ -26,7 +26,7 @@ $timeline-padding: map-get($sizers, 4);
     left: $timeline-padding;
 
     @include gt-sm {
-      left: calc(50% - #{$timeline-width / 2 - 70px});
+      left: calc(50% - #{$timeline-width / 2 - 100px});
     }
   }
 }
