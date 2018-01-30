@@ -4,7 +4,7 @@
 @import 'elevation';
 @import 'responsive-mixins';
 
-$y-displacement: map-get($sizers, 20);
+$y-displacement: map-get($sizers, 15);
 
 .about-me {
   &__header {
@@ -52,8 +52,8 @@ $y-displacement: map-get($sizers, 20);
     z-index: 1;
 
     padding: $y-displacement 0 map-get($sizers, 2) 0;
-    margin-bottom: -$y-displacement;
-    transform: translateY(-$y-displacement);
+    margin-bottom: -$y-displacement * 1.5;
+    transform: translateY(-$y-displacement * 1.5);
     text-align: center;
 
     @include gt-sm {

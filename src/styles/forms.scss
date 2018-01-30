@@ -5,6 +5,7 @@
 input,
 textarea {
   width: 100%;
+  box-sizing: border-box;
   appearance: none;
   background-color: $white-2;
   border: 1px solid $grey-4;

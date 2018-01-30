@@ -12,7 +12,9 @@ import { AppComponent } from './app.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { SkillsComponent } from './skills/skills.component';
+import { MyHobbiesComponent } from './my-hobbies/my-hobbies.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
+import { FooterComponent } from './footer/footer.component';
 
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
@@ -39,7 +41,9 @@ import { NavigationModule } from './navigation/navigation.module';
     ExperienceComponent,
     SkillsComponent,
     ProgressBarComponent,
+    MyHobbiesComponent,
     ContactMeComponent,
+    FooterComponent,
   ],
 })
 export class AppModule { }

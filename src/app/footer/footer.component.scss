@@ -1,0 +1,10 @@
+@import 'colors';
+@import 'sizes';
+@import 'shapes';
+
+.footer {
+  margin-top: map-get($sizers, 8);
+  padding: map-get($sizers, 4);
+
+  @include floating-card();
+}

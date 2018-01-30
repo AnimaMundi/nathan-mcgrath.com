@@ -7,7 +7,7 @@ import {
 import { NavigationLinkComponent } from './navigation-link/navigation-link.component';
 import { DocumentService } from '../dom-services/document.service';
 
-const SCROLL_Y_DISPLACEMENT: number = 250;
+const SCROLL_Y_DISPLACEMENT: number = 500;
 const LINK_HEIGHT: number = 100;
 
 @Component({
@@ -76,17 +76,25 @@ export class NavigationComponent {
     this.activeIndex = 0;
 
     for (let i: number = 0, len: number = this.sortedLinkElements.length; i < len; i++) {
-      if (i === len - 1) { continue; }
 
       const scrollPos: number = this._documentService.getScrollTop();
       const curPos: number = this.sortedLinkElements[i].getTargetPosition().top;
+
+      if (i === len - 1) {
+        if (scrollPos >= (curPos - SCROLL_Y_DISPLACEMENT)) {
+          this.activeIndex = i;
+          break;
+        }
+      }
+
       const nextPos: number = this.sortedLinkElements[i + 1].getTargetPosition().top;
 
       if (
         scrollPos >= (curPos - SCROLL_Y_DISPLACEMENT) &&
-        scrollPos < nextPos
+        scrollPos < (nextPos - SCROLL_Y_DISPLACEMENT)
       ) {
         this.activeIndex = i;
+        break;
       }
     }
 
