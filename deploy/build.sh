@@ -9,6 +9,3 @@ sudo npm install
 
 # build the application
 sudo npm run build:ssr
-
-# copy env vars into build directory
-sudo cp .env build/.env
