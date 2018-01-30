@@ -1,11 +1,12 @@
 import {
   Component, ChangeDetectionStrategy,
-  ViewChildren, QueryList, HostListener,
+  ViewChildren, QueryList,
   ChangeDetectorRef
 } from '@angular/core';
 
 import { NavigationLinkComponent } from './navigation-link/navigation-link.component';
 import { DocumentService } from '../dom-services/document.service';
+import { ScrollService } from '../dom-services/scroll.service';
 
 const SCROLL_Y_DISPLACEMENT: number = 500;
 const LINK_HEIGHT: number = 100;
@@ -36,10 +37,12 @@ export class NavigationComponent {
 
   constructor(
     private _documentService: DocumentService,
+    private _scrollService: ScrollService,
     private _changeDetectorRef: ChangeDetectorRef
-  ) { }
+  ) {
+    this._scrollService.scroll$.subscribe(this.onWindowScroll.bind(this));
+  }
 
-  @HostListener('window:scroll')
   public onWindowScroll(): void {
     this.setActiveLink();
   }

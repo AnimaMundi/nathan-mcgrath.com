@@ -1,4 +1,13 @@
-<div class="nmg-progress-bar">
+<div
+  class="nmg-progress-bar"
+  nmgInView
+  (enterView)="onEnterView()"
+  (exitView)="onExitView()">
+
   <div class="nmg-progress-bar__background"></div>
-  <div class="nmg-progress-bar__indicator" [style.width]="progress()"></div>
+
+  <div
+    class="nmg-progress-bar__indicator"
+    [@progressBarState]="{ value: state, params: { width: progress() } }"
+  ></div>
 </div>

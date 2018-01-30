@@ -55,6 +55,14 @@ export class DocumentService {
       0;
   }
 
+  public getDocumentHeight(): number {
+    if (isPlatformServer(this._platformId)) { return 0; }
+
+    return window.innerHeight
+      || document.documentElement.clientHeight
+      || document.body.clientHeight;
+  }
+
   private getWindowPageYOffset(): number | undefined {
     return this.nativeDocument.defaultView &&
       this.nativeDocument.defaultView.pageYOffset ||

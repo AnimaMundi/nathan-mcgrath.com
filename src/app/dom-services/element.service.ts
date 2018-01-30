@@ -47,4 +47,14 @@ export class ElementService {
       left: clientRect.left
     };
   }
+
+  public isInView(element: ElementRef): boolean {
+    const scrollPos: number = this._documentService.getScrollTop();
+    const elemPos: number = this.getPosition(element).top;
+
+    return (
+      elemPos >= scrollPos &&
+      elemPos < scrollPos + this._documentService.getDocumentHeight()
+    );
+  }
 }

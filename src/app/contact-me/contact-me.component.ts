@@ -15,14 +15,14 @@ declare var grecaptcha: any;
       transition(':enter', [
         style({ opacity: 0, transform: 'translateY(-100%)' }),
         animate(
-          '192ms ease-out',
+          '256ms ease-out',
           style({ opacity: 1, transform: 'translateY(0)' })
         )
       ]),
       transition(':leave', [
         style({ opacity: 1, transform: 'translateY(0)' }),
         animate(
-          '192ms ease-out',
+          '256ms ease-out',
           style({ opacity: 0, transform: 'translateY(100%)' })
         )
       ]),
