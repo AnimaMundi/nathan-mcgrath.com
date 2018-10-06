@@ -25,6 +25,9 @@ import 'web-animations-js';
 import 'reflect-metadata';
 import 'zone.js';
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
+if (IS_PRODUCTION) { enableProdMode(); }
+
 import { AppBrowserModule } from './app/app-browser.module';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 platformBrowserDynamic().bootstrapModule(AppBrowserModule);

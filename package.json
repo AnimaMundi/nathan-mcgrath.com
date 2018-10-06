@@ -6,10 +6,10 @@
   "scripts": {
     "build": "webpack --progress",
     "start": "webpack-dev-server --progress",
-    "build:aot": "npm run build -- --config=config/webpack.aot.ts",
-    "start:aot": "npm run start -- --config=config/webpack.aot.ts",
-    "build:ssr:client": "npm run build -- --config=config/webpack.aot.ts --output-public-path=public/",
-    "build:ssr:server": "npm run build -- --config=config/webpack.ssr.ts",
+    "build:aot": "npm run build -- --config=config/webpack.aot.ts --env=production",
+    "start:aot": "npm run start -- --config=config/webpack.aot.ts --env=production",
+    "build:ssr:client": "npm run build -- --config=config/webpack.aot.ts --output-public-path=public/ --env=production",
+    "build:ssr:server": "npm run build -- --config=config/webpack.ssr.ts --env=production",
     "build:ssr": "npm run build:ssr:client && npm run build:ssr:server",
     "start:ssr": "node build/server.js",
     "ssr": "npm run build:ssr && npm run start:ssr"
